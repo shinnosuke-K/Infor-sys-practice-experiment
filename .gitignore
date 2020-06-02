@@ -1,0 +1,6 @@
+.vscode
+.DS_Store
+gcc.ls
+gcc.ls~
+crt.o
+crt.S
