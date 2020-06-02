@@ -1,0 +1,19 @@
+
+Ex3-1.bin:     file format binary
+
+
+Disassembly of section .data:
+
+02000000 <.data>:
+ 2000000:	e3a01301 	mov	r1, #67108864	; 0x4000000
+ 2000004:	e59f201c 	ldr	r2, [pc, #28]	; 0x2000028
+ 2000008:	e1c120b0 	strh	r2, [r1]
+ 200000c:	e3a03406 	mov	r3, #100663296	; 0x6000000
+ 2000010:	e59f4014 	ldr	r4, [pc, #20]	; 0x200002c
+ 2000014:	e1c340b0 	strh	r4, [r3]
+ 2000018:	e1c340b4 	strh	r4, [r3, #4]
+ 200001c:	e1c340b8 	strh	r4, [r3, #8]
+ 2000020:	e1c340bc 	strh	r4, [r3, #12]
+ 2000024:	eafffffe 	b	0x2000024
+ 2000028:	00000f03 	andeq	r0, r0, r3, lsl #30
+ 200002c:	00007fff 	strdeq	r7, [r0], -pc	; <UNPREDICTABLE>
