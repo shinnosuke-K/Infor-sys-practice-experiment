@@ -2,15 +2,15 @@ typedef volatile unsigned short hword;
 #define VRAM 0x06000000
 void draw_point (hword, hword, hword);
 
+// 微妙に間違っている
+
 int main (void) {
 	hword *ptr ;
-	hword color1;
-	hword color2;
+	hword cyan;
+	hword red;
 	ptr = (hword*) 0x04000000;
 	*ptr = 0x0F03;
 
-	hword y;
-	hword x;
 	hword xa;
 	hword ya;
 	hword xb;
@@ -19,11 +19,13 @@ int main (void) {
 	ya = (525) * (3) % 39 + 41;
 	xb = (1028) % 59 + 181;
 	//yb = (1032) % 39 + 81;
-	color1 = 0x7FE0;
-	color2 = 0x001F;
+	cyan = 0x7FE0;
+	red = 0x001F;
+
+	hword x, y;
 	for(y =0 ; y < 160; y++){
 		for(x = 0; x < 240; x++){
-		draw_point(x ,y , color1);
+		draw_point(x ,y , cyan);
 		}
 	}
 	//hword sum = 1;
@@ -38,8 +40,7 @@ int main (void) {
 			y = y + 1;
 			a = a - (y - ya);
 		}
-
-		draw_point(x , y , color2);
+		draw_point(x , y , red);
 	 }
 
 	while(1);
@@ -51,8 +52,3 @@ void draw_point (hword x , hword y , hword color) {
 	ptr +=(x + y*240);
 	*ptr = color;
 }
-
-
-
-
-

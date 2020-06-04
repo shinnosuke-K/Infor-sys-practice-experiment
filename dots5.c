@@ -10,7 +10,7 @@ int main (void) {
 	ptr = (hword*) 0x04000000;
 	*ptr = 0x0F03;
 
-	color = 0x07FFF;
+	color = 0x07FFF; // white
 	ptr = (hword*) VRAM;
 
 	*ptr = color;

@@ -8,7 +8,7 @@ int main (void) {
 	hword y;
 	ptr = (hword*) 0x04000000;
 	*ptr = 0x0F03;
-	color = 0x7FE0;
+	color = 0x7FE0; // cyan
 
 	for(y = 0; y < 160; y++){
 		for(x = 0; x < 240; x++){
@@ -17,7 +17,7 @@ int main (void) {
 	}
 	x = ((525) + (3)) % 59 + 60;
 	y = (525) * (3) % 39 + 81;
-	draw_point(x, y , 0x001F);
+	draw_point(x, y , 0x001F /* red */);
 	while(1);
 	return(0);
 }

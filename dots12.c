@@ -14,18 +14,20 @@ int main (void) {
 	hword ya;
 	hword xb;
 	hword yb;
+
 	xa = ((525) + (3)) % 59;
 	ya = (525) * (3) % 39 + 41;
 	xb = (1028) % 59 + 181;
 	yb = (1032) % 39 + 81;
 
-	color = 0x7FE0;
+	color = 0x7FE0; // red
 	for(y = 0; y < 160; y++){
 		for(x = 0; x < 240; x++){
 			draw_point(x ,y , color);
+		}
 	}
-	}
-	color = 0x001F;
+
+	color = 0x001F; // blue
 	for(y = ya; y <= yb; y++){
 		for(x = xa; x <= xb; x++){
 			draw_point(x ,y , color);
@@ -36,13 +38,7 @@ int main (void) {
 }
 
 void draw_point (hword x , hword y , hword color) {
-
 	hword *ptr = (hword*)VRAM;
 	ptr +=(x + y*240);
 	*ptr = color;
 }
-
-
-
-
-
